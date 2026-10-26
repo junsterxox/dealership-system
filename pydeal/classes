@@ -1,0 +1,49 @@
+import sqlite3
+
+class Car:
+    def __init__(self, make, model, year, price):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.price = price
+    
+    def save(self):
+        conn = sqlite3.connect('cars.db')
+        c = conn.cursor()
+        
+        # create table if it does not exist
+        c.execute('''CREATE TABLE IF NOT EXISTS cars
+                     (id INTEGER PRIMARY KEY, make TEXT, model TEXT, year INTEGER, price REAL)''')
+
+        c.execute("INSERT INTO cars VALUES (NULL, ?, ?, ?, ?)", 
+                  (self.make, self.model, self.year, self.price))
+        
+        conn.commit()
+        conn.close()
+
+class Customer:
+    def __init__(self, name, address, phone):
+        self.name = name
+        self.address = address
+        self.phone = phone
+    
+    def save(self):
+        conn = sqlite3.connect('customers.db')
+        c = conn.cursor()
+        
+        # create table if it does not exist
+        c.execute('''CREATE TABLE IF NOT EXISTS customers
+                     (id INTEGER PRIMARY KEY, name TEXT, address TEXT, phone TEXT)''')
+
+        c.execute("INSERT INTO customers VALUES (NULL, ?, ?, ?)", 
+                  (self.name, self.address, self.phone))
+        
+        conn.commit()
+        conn.close()
+
+# Example usage:
+car = Car('Toyota', 'Corolla', 2018, 25000)
+car.save()
+
+customer = Customer('John Doe', '1234 Elm St.', '555-1234')
+customer.save()
