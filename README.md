@@ -23,18 +23,3 @@ profiles. Records are stored locally in a SQLite database.
 - Validate required fields, numeric vehicle details, email format, and unique
   non-empty VINs.
 
-Install the image display dependency with:
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-Photo files stay at their selected locations on disk; the database stores the
-photo file paths. Existing single-photo profiles are retained when the database
-is upgraded.
-
-## Run tests
-
-```powershell
-python -m unittest discover -s tests
-```
