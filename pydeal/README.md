@@ -8,31 +8,6 @@ profiles. Records are stored locally in a SQLite database.
 - Python 3.10 or newer
 - Tkinter (included with most standard Python installations)
 
-## Run
-
-From this folder, start the application with:
-
-```powershell
-python app.py
-```
-
-When run from source, the application creates `dealership.db` in the current
-working directory.
-
-## Build a Windows executable
-
-Run `build.ps1` in PowerShell to create a standalone, windowed executable:
-
-```powershell
-.\build.ps1
-```
-
-The build installs its Python build dependencies and creates
-`dist\DealershipManager.exe`. Users can launch the app by double-clicking the
-executable; Python and a terminal are not required. Packaged app data is stored
-in `%LOCALAPPDATA%\DealershipManager\dealership.db`, independent of the
-executable's location. If a `dealership.db` is beside the executable on first
-launch, it is copied into the user's app-data folder.
 
 ## Features
 
