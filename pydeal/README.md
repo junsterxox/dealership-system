@@ -33,8 +33,3 @@ Photo files stay at their selected locations on disk; the database stores the
 photo file paths. Existing single-photo profiles are retained when the database
 is upgraded.
 
-## Run tests
-
-```powershell
-python -m unittest discover -s tests
-```
