@@ -23,3 +23,7 @@ profiles. Records are stored locally in a SQLite database.
 - Validate required fields, numeric vehicle details, email format, and unique
   non-empty VINs.
 
+## How To Run
+
+The application .exe file is within the 'dist' folder.
+Once the files have been extracted, you may run it through there.
